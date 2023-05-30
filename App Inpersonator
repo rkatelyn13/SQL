@@ -1,0 +1,18 @@
+CREATE TABLE snapchat (id INTEGER PRIMARY KEY, 
+        name TEXT, 
+        birthday TEXT, 
+        chat TEXT, 
+        friend TEXT, 
+        snaps NUMERIC);
+        
+INSERT INTO snapchat (name, birthday, chat, friend, snaps) VALUES ("Reyna", "1/13/97", "reynilla", "bobby", 105600);
+INSERT INTO snapchat (name, birthday, chat, friend, snaps) VALUES ("Bobby", "6/30/95", "therealbob", "curtis", 400670);
+INSERT INTO snapchat (name, birthday, chat, friend, snaps) VALUES ("Katelynn", "12/27/96", "katewilly", "reyna", 95600);
+
+SELECT * FROM snapchat;
+
+UPDATE snapchat SET friend = "k-teezy" WHERE id=1;
+SELECT * FROM snapchat;
+
+DELETE FROM snapchat WHERE id=3;
+SELECT * FROM snapchat;
