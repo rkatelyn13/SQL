@@ -1,0 +1,48 @@
+CREATE TABLE singers (id INTEGER PRIMARY KEY,
+        fullname TEXT);
+
+INSERT INTO singers (fullname)
+    VALUES ("Ariana Grande");
+INSERT INTO singers (fullname)    
+    VALUES ("Justin Bieber");
+INSERT INTO singers (fullname)    
+    VALUES ("Selena Gomez");
+INSERT INTO singers (fullname)    
+    VALUES ("Miley Cyrus");
+INSERT INTO singers (fullname)    
+    VALUES ("Demi Lovato");
+INSERT INTO singers (fullname)    
+    VALUES ("SZA");
+INSERT INTO singers (fullname)    
+    VALUES ("Harry Styles");
+INSERT INTO singers (fullname)    
+    VALUES ("Taylor Swift");
+    
+CREATE TABLE facts (id INTEGER PRIMARY KEY,
+        singers_id INTEGER,
+        song TEXT,
+        birthplace TEXT,
+        age INTEGER);
+        
+INSERT INTO facts (singers_id, song, birthplace, age)
+    VALUES (1, "God Is A Woman", "Florida", 29);
+INSERT INTO facts (singers_id, song, birthplace, age)
+    VALUES (2, "Baby", "Canada", 29);
+INSERT INTO facts (singers_id, song, birthplace, age)
+    VALUES (3, "Calm Down", "Texas", 30);
+INSERT INTO facts (singers_id, song, birthplace, age)
+    VALUES (4, "Flowers", "Tennassee", 30);
+INSERT INTO facts (singers_id, song, birthplace, age)
+    VALUES (5, "Dancing With The Devil", "New Mexico", 30);
+INSERT INTO facts (singers_id, song, birthplace, age)
+    VALUES (6, "Kill Bill", "Missouri", 33);
+INSERT INTO facts (singers_id, song, birthplace, age)
+    VALUES (7, "Watermelon Sugar", "England", 29);
+INSERT INTO facts (singers_id, song, birthplace, age)
+    VALUES (8, "Anti-Hero", "Pennsilvania", 33);
+    
+SELECT singers.fullname, facts.singers_id, facts.song, facts.birthplace, facts.age FROM facts
+    JOIN singers
+    ON singers.id = facts.singers_id
+    ORDER BY facts.age;
+    
